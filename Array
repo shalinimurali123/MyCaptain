@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main()
+{
+  int a[3][3],i,j,*p;
+  int sum=0;
+  printf("Input elements:\n");
+  for(i=0;i<3;i++)
+  {
+      for(j=0;j<3;j++)
+      {
+	      printf("element - [%d] [%d] ",i,j);
+	      scanf("%d",&a[i][j]);
+      }
+  }  
+ p=&a;
+ printf("\nThe matrix is : \n");
+  for(i=0;i<3;i++)
+  {
+      printf("\n");
+      for(j=0;j<3;j++)
+           printf("%d\t",*(p+i));
+   }
+   sum=a[0][0]+a[1][1]+a[2][2];
+ printf("\nSum of diagonal elements is %d",sum);
+
+}
