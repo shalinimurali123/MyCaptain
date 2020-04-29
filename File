@@ -1,0 +1,98 @@
+
+#include <stdio.h> 
+#include <stdlib.h> 
+
+  
+
+int main() 
+{ 
+
+    FILE *fp1, *fp2; 
+
+    char a[100],ch[100],c,i; 
+
+ 
+
+    printf("Enter the filename to open for reading \n"); 
+
+    scanf("%s",a); 
+
+  
+
+    
+
+    fp1 = fopen(a, "w"); 
+
+    if (fp1 == NULL) 
+
+    { 
+
+        printf("Cannot open file %s \n", a); 
+
+        exit(0); 
+
+    } 
+
+  
+
+    printf("Enter the filename to open for writing \n"); 
+
+    scanf("%s", ch); 
+
+  
+
+    
+
+    fp2 = fopen(ch, "w"); 
+
+    if (fp2 == NULL) 
+
+    { 
+
+        printf("Cannot open file %s \n", ch); 
+
+        exit(0); 
+
+    } 
+
+  
+
+    // Read contents from file 
+
+    c = fgetc(fp1); 
+
+    while (c != EOF) 
+
+    { 
+
+        fputc(c, fp2); 
+        c=fgetc(fp1);
+
+    } 
+
+  
+
+    printf("\nContents copied");
+    
+    //To print in reverse
+   
+
+    fseek(fp1, 0, SEEK_END); //SEEK_END keeps cursor point at end of file
+    int count = ftell(fp1); //Tells the number of character or bytes in file
+
+    while (i < count)
+    {
+            i++;
+            fseek(fp1, -i, SEEK_END);
+            printf("%c", fgetc(fp1));
+    }
+
+    printf("\n");
+   
+  
+
+    fclose(fp1); 
+    fclose(fp2);
+    
+    return 0;
+}
