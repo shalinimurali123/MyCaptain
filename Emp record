@@ -10,13 +10,14 @@ typedef struct{
     float salary;
  
 } employees[20];
+
  
 int main()
 {
-    int i;
- 
+    int i,ch;
+    
 
-
+      
 
  
     printf("Enter %d Employee Details \n \n",n);
@@ -35,11 +36,12 @@ int main()
  
         printf("\n");
     }
- 
+    printf("Do you wanna print? Click 1 if yes");
+    scanf("%d",&ch);
     
 
 
-   
+    do{
     for(i=0; i<20; i++){
  
         printf("Name \t: ");
@@ -52,7 +54,8 @@ int main()
         printf("%f \n",employees[i].salary);
  
         printf("\n");
-    }
+        }
+    }while(ch==1);
  
     return 0;
  
