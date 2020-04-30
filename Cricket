@@ -1,0 +1,65 @@
+#include<stdio.h>
+struct batsman
+{
+    int runs;
+    char name[25];
+}player[100],t;
+
+struct bowler
+{
+    int wickets;
+    char name[25];
+}player1[100],a;
+ 
+int main()
+{
+    int i,j,n;
+    char team1[20],team2[20];
+    printf("		Welcome to 20-20 WorldCup 		");
+   printf("\nEnter team name(1):");
+    scanf("%s",team1);
+    printf("\nEnter the no. of players(batting)\n");
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+    	printf("\nEnter player name:");
+        scanf("%s",player[i].name);
+        printf("\nEnter Runs:");
+        scanf("%d",&player[i].runs);
+    }
+    
+    printf("\nEnter team name(2):");
+    scanf("%s",team2);
+    printf("\nEnter the no. of players(bowling)\n");
+    scanf("%d",&n);
+    
+    for(i=0;i<n;i++)
+    {
+        printf("\nEnter player name:");
+        scanf("%s",player1[i].name);
+        printf("\nEnter Wickets:");
+        scanf("%d",&player1[i].wickets);
+    }
+    
+        
+    
+    
+    printf("\nCricketer score sheet-First Innings\n");
+    printf("\n		Team %s		",team1);
+    printf("\nNAME\t\t\tRUNS_SCORED\n");
+    printf("----------------------------------------------------\n");
+ 
+    for(i=0;i<n;i++)
+    {
+        printf("%s\t\t\t	%d\n",player[i].name,player[i].runs);
+    }
+    
+    printf("\n		Team %s		",team2);
+    printf("\nNAME\t\t\tWickets\n");
+    printf("----------------------------------------------------\n");
+ 
+    for(i=0;i<n;i++)
+    {
+        printf("%s\t\t\t	  %d\n",player1[i].name,player1[i].wickets);
+    }
+}
